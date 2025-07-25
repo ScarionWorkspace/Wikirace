@@ -8,6 +8,16 @@
   if (searchForm) {
     searchForm.style.display = 'none';
   }
+  document.querySelectorAll(
+    '.mw-references-wrap, .reference, sup.reference, .reflist, ol.references, div.references'
+  ).forEach(el => el.style.display = 'none');
+
+  document.querySelectorAll('h2, h3, h4').forEach(el => {
+    const span = el.querySelector('span');
+    if (span && /references|notes|anmerkungen|quellen|literatur/i.test(span.id || span.textContent)) {
+      el.style.display = 'none';
+    }
+  });
   //Show timer in Tab 
   let timerInterval;
   function startTimer() {
