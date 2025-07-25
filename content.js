@@ -4,7 +4,10 @@
 
   const originalTitle = document.title;
   const current = document.title.replace(" - Wikipedia", "");
-
+  const searchForm = document.getElementById('searchform');
+  if (searchForm) {
+    searchForm.style.display = 'none';
+  }
   //Show timer in Tab 
   let timerInterval;
   function startTimer() {
