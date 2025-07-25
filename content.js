@@ -5,7 +5,7 @@
   const originalTitle = document.title;
   const current = document.title.replace(" - Wikipedia", "");
 
-  // Timer im Tab-Titel anzeigen
+  //Show timer in Tab 
   let timerInterval;
   function startTimer() {
     timerInterval = setInterval(() => {
@@ -27,7 +27,7 @@
     document.title = originalTitle;
   }
 
-  // Starte Timer nur beim ersten Aufruf
+  // Start timer only for first time
   if (!window.wikiraceTimerStarted) {
     startTimer();
     window.wikiraceTimerStarted = true;
