@@ -36,6 +36,11 @@ document.getElementById('startRace').addEventListener('click', async () => {
     document.getElementById('status').textContent = `Game started! Get to '${target}' on ${lang}.wikipedia.org`;
 });
 
+document.getElementById('stopRace').addEventListener('click', async () => {
+    await chrome.storage.local.remove("wikirace");
+    document.getElementById('status').textContent = "Race stopped.";
+});
+
 
 document.getElementById('copySeed').addEventListener('click', () => {
     const lang = document.getElementById('lang').value;
